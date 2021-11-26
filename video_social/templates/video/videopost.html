@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+{% block category %}
+<a class="btn_category" href="'#'">музыка</a>
+<a class="btn_category" href="'#'">спорт</a>
+<a class="btn_category" href="'#'">политика</a>
+<a class="btn_category" href="'#'">Развлечения</a>
+<a class="btn_category" href="'#'">Игры</a>
+{% endblock category %}
+{% block content %}
+{% if videopost %}
+
+{% for video in videopost  %}
+{{video.video}}
+{{video.description}}
+<img class="img-fluid" src="media/{{video.preview}}" alt="">
+
+
+
+
+{% endfor %}
+{% endif %}
+{% endblock content %}

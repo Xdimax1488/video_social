@@ -42,7 +42,7 @@ class Videopost(models.Model):
 class Comment(models.Model):
     '''коментарии'''
     name = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='коментатор')
-    video = models.ForeignKey(Videopost, on_delete=models.CASCADE, verbose_name='коментируемое видео')
+    video = models.ForeignKey(Videopost, on_delete=models.CASCADE, verbose_name='коментируемое видео', related_name='comments')
     body = models.TextField('коментарий', max_length=400)
     created = models.DateTimeField(auto_now_add=True, verbose_name='дата создания: ')
 

@@ -1,0 +1,70 @@
+{%load static%}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,400;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/conteiner.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/category.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/content.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="conteiner">
+        <div class="header__inner">
+          <div class="logo">
+            <a href="/">My<span>Tube</span></a>
+          </div>
+          <div class="serch_form">
+            <form action="">
+              <input type="text" placeholder="serch">
+              <button>9</button>
+            </form>
+          </div>
+          <div class="header__nav">
+            <ul>
+              <li>
+                {%if user.is_authenticated%}
+                  <span>{{user.username}}</span>
+                  <a href="{% url 'account_logout' %}" class="nav__link">Выход</a>
+                {% else %}
+                  <a class="nav__link" href="{% url 'account_login' %}">Вход</a>
+                  <a class="nav__link" href="{% url 'account_signup' %}">Регестрация</a>
+                {% endif %}  
+              </li>
+              <li class="nav__link-img">
+                <a href="#">
+                  <img src="" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="conteiner__category">
+        <div class="category__inner">
+          {% block category %}
+          {% endblock category %}
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="conteiner__category">
+      {%block content%}
+      {%endblock content%}
+
+      </div>
+    </div>
+  </body>
+ 
+</html>

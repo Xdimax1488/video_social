@@ -1,0 +1,30 @@
+.conteiner__category {
+  padding: 0 10rem;
+}
+.category__inner {
+  display:flex;
+  align-items:center;
+  width: 100%;
+  height: auto;
+  background-color: rgb(255, 255, 255,0.9);
+  border-top: rgba(0, 0, 0, 0.2) solid 1px;
+  border-bottom: solid 1px rgb(0, 0, 0, 0.2);
+}
+.btn_category{
+    text-decoration: none;
+    color: rgba(0, 0, 0);
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 5px 10px ;
+    margin: 10px;
+    border-radius:  16px;
+    border: rgba(0, 0, 0, 0.1) solid 1px;
+    background-color:rgba(0, 0, 0, 0.05);
+    transition: background-color 0.7s;
+
+}
+.btn_category:hover{
+    background-color:rgba(0, 0, 0);
+    color:rgb(255, 255, 255)
+}
