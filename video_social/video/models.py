@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import FileExtensionValidator
 
 
 # Create your models here.
@@ -22,7 +23,7 @@ class Videopost(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='категория')
     name = models.CharField('Заголовок', max_length=80)
     description = models.TextField('Описание', max_length=500)
-    video = models.FileField('видео', upload_to='video/items/%Y/%m/%d')
+    video = models.FileField('видео', upload_to='video/items/%Y/%m/%d',validators=[FileExtensionValidator(allowed_extensions=['mp4'])])
     preview = models.ImageField('превю для видео',upload_to='image/items/%Y/%m/%d',blank=True,null=True)
     published = models.DateTimeField(auto_now_add=True, verbose_name='дата создания')
 
