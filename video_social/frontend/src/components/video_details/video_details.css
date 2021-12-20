@@ -1,0 +1,11 @@
+.content {
+  margin-top: 140px;
+}
+.conteiner__category {
+  padding: 0 0 0 10rem;
+}
+.video{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

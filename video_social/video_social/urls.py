@@ -18,10 +18,16 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from video.views import index, category_deteil,video_deteil
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index),
+    path('category/<int:id>', category_deteil),
+    path('videos/<int:id>',video_deteil),
     path('accounts/', include('allauth.urls')),
-    path('', include('video.urls')),
+    path('api/', include('video.api.urls')),
 ]
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
