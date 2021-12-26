@@ -1,5 +1,22 @@
 .content {
-  margin-top: 140px;
+  margin-top: 90px;
+}
+.form{
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.serch_form{
+  
+}
+.serch__input{
+  padding-left: 30px;
+  width: 20rem;
+  height: 1.5rem;
+  border: 1px solid rgba(51, 49, 49, 0.5);
+  box-shadow: 1px 1px 1px rgba(51, 49, 49, 0.5) ;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/0/0b/Search_Icon.svg) no-repeat 3px 1px;
+    background-size: auto 90%;
 }
 .videos {
   display: flex;

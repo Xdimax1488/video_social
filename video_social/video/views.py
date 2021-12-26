@@ -10,5 +10,8 @@ def category_deteil(request,id):
 def video_deteil(request,id):
     return render(request, 'index.html', {})
 
+def author (request,id):
+    return render(request,'index.html', {})
+
 
 

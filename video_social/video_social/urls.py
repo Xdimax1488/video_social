@@ -18,13 +18,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from video.views import index, category_deteil,video_deteil
+from video.views import index, category_deteil,video_deteil,author
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('category/<int:id>', category_deteil),
     path('videos/<int:id>',video_deteil),
+    path('author/<int:id>',author),
     path('accounts/', include('allauth.urls')),
     path('api/', include('video.api.urls')),
 ]

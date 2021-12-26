@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
+import CategoryNav from '../category_nav/category_nav'
 
 import './videos.css'
 import '../category_nav/category_nav.css'
@@ -17,15 +18,32 @@ function AllVideos(){
             url:"http://127.0.0.1:8000/api/videos"
         }).then(response=>{
             setVideos(response.data)
+            console.log(videos)
             
         })
     },[])
+    const [value, setValue] = useState('')
+    const filtersVideos = videos.filter(video =>{
+        return video.name.toLowerCase().includes(value.toLowerCase())
+    })
 
     return(
     <div className="content">
       <div className="conteiner__category">
+      <CategoryNav/>
+      <div className="form">
+          <form className="serch__form">
+              <input 
+              type="text"
+              placeholder="поиск"
+              className="serch__input"
+              onChange={(event)=>setValue(event.target.value)}
+              />
+            
+          </form>
+      </div>
           <div className="videos">
-              {videos.map(video=>(
+              {filtersVideos.map(video=>(
                   <div className="video__col">
                   
                     <div className="video">

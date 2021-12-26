@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import{Link} from 'react-router-dom'
 import axios from 'axios';
+import CategoryNav from '../category_nav/category_nav'
 import './category_details.css'
 import '../category_nav/category_nav.css'
 
@@ -25,6 +26,7 @@ function CategoryDetail({match}){
     return(
         <div className="content">
         <div className="conteiner__category">
+        <CategoryNav/>
             <div className="videos">
                 {videos.map(video=>(
                     <div className="video__col">
