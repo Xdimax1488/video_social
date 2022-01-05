@@ -13,5 +13,8 @@ def video_deteil(request,id):
 def author (request,id):
     return render(request,'index.html', {})
 
+def create(request):
+    return render(request, 'index.html', {})
+
 
 

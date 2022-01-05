@@ -1,9 +1,9 @@
 .conteiner {
   width: 100%;
 
-  padding: 0 ;
+  padding: 0;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
 }
 .header {
   position: fixed;
@@ -30,6 +30,21 @@
 .header__nav ul {
   display: flex;
   align-items: center;
+}
+.add__video {
+  text-decoration: none;
+  color: white;
+  background-color: rgba(252, 21, 21, 0.83);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: .3s;
+}
+.add__video:hover{
+  color: rgb(255, 0, 0);
+  background-color:white;
+  
 }
 .header__nav ul li {
   list-style: none;

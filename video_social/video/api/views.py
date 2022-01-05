@@ -1,9 +1,9 @@
-from rest_framework import viewsets
+from rest_framework import serializers, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from ..models import Category, Videopost, Comment, Author
-from ..serializers import CategorySerializer, VideopostSerializer, CategoryDatailSerializer, CommentCreateSerializer, AuthorSerializer,AuthorDatailSerializer
+from ..serializers import CategorySerializer, VideopostSerializer, CategoryDatailSerializer, CommentCreateSerializer, AuthorSerializer,AuthorDatailSerializer,CommentSerializer
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
@@ -31,6 +31,11 @@ class CommentCreateViewSet(viewsets.ModelViewSet):
     '''Добавления комента'''
     queryset = Comment.objects.all()
     serializer_class = CommentCreateSerializer
+
+
+class CommentSerializerViewSet(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
+    serializers_class = CommentSerializer
 
 
 class AuthorViewSet(viewsets.ModelViewSet):

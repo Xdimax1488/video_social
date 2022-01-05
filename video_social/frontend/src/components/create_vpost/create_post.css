@@ -1,0 +1,31 @@
+.create__form {
+  margin-top: 10rem;
+}
+.create__form ul {
+  list-style: none;
+}
+.create__form ul li {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.input__text {
+  width: 400px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  height: 25px;
+  font-size: 1rem;
+}
+.create__botton {
+  width: 406px;
+  margin-left: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background-color: rgba(252, 21, 21, 0.83);
+}
+.create__botton h1{
+    font-size: 1rem;
+    color: white;
+    margin-top: 7px;
+
+}

@@ -8,6 +8,7 @@ router.register('videos', VideopostViewSet, basename='videos')
 router.register('comment', CommentCreateViewSet,basename = 'comment')
 router.register('author',AuthorViewSet,basename='author')
 
+
 urlpatterns = []
 
 urlpatterns += router.urls

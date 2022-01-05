@@ -7,15 +7,18 @@ import AllVideos from './components/videos/videos';
 import CategoryDetail from './components/category_detail/category_detail'
 import VideoDetail from './components/video_details/video_details';
 import AuthorDetail from './components/author/author';
+import CreatePost from './components/create_vpost/create_post';
 
 function App() {
   return (
     <div className="App">
       <Router>
       <Header/>
+      
         
           <Switch>
-            <Route path="/" exact component={ AllVideos}/>
+            <Route path="/" exact component={AllVideos}/>
+            <Route path="/create/" exact component={CreatePost}/>
             <Route path="/category/:id"exact component={CategoryDetail}/>
             <Route path="/videos/:id"exact component={VideoDetail}/>
             <Route path = "/author/:id"exact component={AuthorDetail}/>

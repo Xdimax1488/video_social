@@ -29,6 +29,10 @@
   font-weight: 400;
   margin-bottom: 1rem;
 }
+.add{
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
 .video__nav {
   display: flex;
   align-items: center;

@@ -57,6 +57,13 @@ function AuthorDetail({match}){
                     email пользывателя : {author.email}
                     </div>
                 </div>
+
+                <div className="add">
+                <Link className="add__video" to={{pathname:`/create/`,fromDashboard:false}}>
+                    Добавить видео
+                </Link>
+                    
+                </div>
                 <ul className="video__nav">
                         <li>видео</li>
                         <li>дата</li>

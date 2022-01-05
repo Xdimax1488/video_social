@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
+import dateFormat from 'dateformat'
 import CategoryNav from '../category_nav/category_nav'
 
 import './videos.css'
@@ -34,6 +35,7 @@ function AllVideos(){
       <div className="form">
           <form className="serch__form">
               <input 
+              
               type="text"
               placeholder="поиск"
               className="serch__input"
@@ -60,7 +62,7 @@ function AllVideos(){
                               {video.name}
                               
                               <div className="user__name">{video.author}</div>
-                              <div className="video__date">{video.published}</div>
+                              <div className="video__date">{dateFormat(video.published,"mmmm dS,yyyy")}</div>
                           </div>
                       </div>
           

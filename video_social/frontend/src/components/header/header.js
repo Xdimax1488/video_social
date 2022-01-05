@@ -38,21 +38,38 @@ function Header(){
             {author.map(aut=>(
               
             <ul>
+              
+              
               <li>
-                
+                 <div >
+                <Link className="add__video" to={{pathname:`/create/`,fromDashboard:false}}>
+                    Добавить видео
+                </Link>
+                    
+                </div>
+              </li>
+
+              <li>
+              
                   <span>{aut.first_name}</span>
+                  
                   <a href="{% url 'account_logout' %}" class="nav__link">Выход</a>
                 
                   <a className="nav__link" href="{% url 'account_login' %}">Вход</a>
                   <a className="nav__link" href="{% url 'account_signup' %}">Регестрация</a>
-                 
+            
               </li>
+                  
               <li className="nav__link-img">
               <Link to={{pathname:`/author/${aut.id}`,fromDashboard:false}}>
                   <img src={aut.avatar} alt=""></img>
                 </Link>
+                
               </li>
+                   
+                   
             </ul>
+          
             ))}
           </div>
 

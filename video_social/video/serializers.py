@@ -25,11 +25,14 @@ class VideopostSerializer(serializers.ModelSerializer):
     category = serializers.SlugRelatedField(slug_field='name', read_only=True)
     author = serializers.SlugRelatedField(
         slug_field='first_name', read_only=True)
-    comments = CommentSerializer(many=True)
+    comments = CommentSerializer(read_only=True,many=True)
+    
 
     class Meta:
         model = Videopost
         fields = '__all__'
+#class VideoDetail(serializers.ModelSerializer):
+    
 
 
 class CategorySerializer(serializers.ModelSerializer):

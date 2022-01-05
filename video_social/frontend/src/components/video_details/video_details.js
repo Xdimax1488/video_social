@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
+import dateFormat from 'dateformat'
 
 import './video_details.css'
 
@@ -26,6 +27,15 @@ function VideoDetail({match}){
         })
         
     }, [id])
+
+    function handleFormSubmit (event){
+        event.preventDefault();
+        const body =event.target.elements.body.value;
+        const name =event.target.elements.name.value;
+        const video = video.id
+
+        console.log(body,name,video)
+    }
     const caunter = comment.length
     return(
        <div className="content">
@@ -40,7 +50,7 @@ function VideoDetail({match}){
                     {video.name}
                 </div>
                 <div className="video__detail-date">
-                    {video.published}
+                    {dateFormat(video.published,"mmmm dS,yyyy")}
                 </div>
             
 
@@ -75,6 +85,25 @@ function VideoDetail({match}){
 
 
                     ))}
+                    <form className="comment__form" onSubmit={(event)=>handleFormSubmit(event)}>
+                        <ul>
+                            <li>
+                                <label for="name">Имя</label>
+                                <input className="input__text" type="text" id="name" name="name"/>
+
+                            </li>
+                            <li>
+                                <label for="body">Текст</label>
+                                <input className="input__body" type="text" id="body" name="body"/>
+
+
+                            </li>
+                        </ul>
+                        <button className='create__botton' type='primery' htmlType="submit">
+                            <h1>Добавить</h1>
+                            </button>
+
+                    </form>
 
                 </div>
 
