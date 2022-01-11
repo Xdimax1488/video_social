@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import FileExtensionValidator
+from django.db.models.deletion import CASCADE
 
 
 # Create your models here.
@@ -78,3 +79,28 @@ class Comment(models.Model):
         verbose_name = 'комментарий'
         verbose_name_plural = 'комментарии'
         ordering = ['-created']
+class Room(models.Model):
+    '''Комнаты чата'''
+    creater =models.ForeignKey(Author,verbose_name='создатель',on_delete=models.CASCADE)
+    invited = models.ManyToManyField(Author,verbose_name='учасники', related_name='invited_user')
+    date = models.DateTimeField('дата создания', auto_now=True)
+
+    class Meta:
+         verbose_name = 'Комната чатов'
+         verbose_name_plural = 'Комнаты чатовов'
+
+
+class Chat(models.Model):
+    '''Модель чата'''
+
+    room = models.ForeignKey(Room,verbose_name='Комната чатов',on_delete=models.CASCADE)
+    user = models.ForeignKey(Author,verbose_name='Учасники чата',on_delete=models.CASCADE)
+    text = models.TextField('Сообщение',max_length=500)
+    data = models.DateTimeField('дата создания',auto_now=True)
+
+
+    class Meta:
+        verbose_name = 'Комната чатов'
+        verbose_name_plural = 'Комнаты чатовов'
+
+

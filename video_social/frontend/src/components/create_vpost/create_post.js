@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Cookie from 'react-cookie';
-
 import './create_post.css';
 
 function CreatePost() {
